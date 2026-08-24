@@ -3,13 +3,6 @@ import Link from "next/link";
 import { CalendarDays, MapPin, Phone } from "lucide-react";
 import { DemoBanner } from "@/components/demos/demo-banner";
 
-const services = [
-  { name: "Haircut", price: "32 €" },
-  { name: "Beard trim", price: "22 €" },
-  { name: "Cut + beard", price: "48 €" },
-  { name: "Kids cut", price: "24 €" },
-];
-
 export function ParturiDemo() {
   return (
     <div className="min-h-screen bg-[#070708] text-[#f3f2ef]">
@@ -25,10 +18,10 @@ export function ParturiDemo() {
           </p>
         </div>
         <nav className="hidden items-center gap-7 text-[0.68rem] tracking-[0.2em] text-white/55 uppercase md:flex">
-          {["Home", "Services", "About", "Gallery", "Contact"].map((item, i) => (
+          {["Home", "About", "Gallery", "Contact"].map((item, i) => (
             <a
               key={item}
-              href={item === "Services" ? "#services" : item === "Contact" ? "#contact" : "#"}
+              href={item === "Contact" ? "#contact" : "#"}
               className={
                 i === 0
                   ? "border-b border-[#5ec8e8] pb-1 text-white"
@@ -63,25 +56,6 @@ export function ParturiDemo() {
               Keskus Parturi on moderni parturi, jossa leikkaus on tarkkaa ja
               tunnelma rauhallinen. Clean cuts. Sharp fades. Timeless style.
             </p>
-
-            <div id="services" className="mt-12 max-w-sm">
-              <p className="text-[0.65rem] font-semibold tracking-[0.24em] text-[#5ec8e8] uppercase">
-                Services
-              </p>
-              <ul className="mt-5 space-y-3.5 border-t border-white/10 pt-5">
-                {services.map((service) => (
-                  <li
-                    key={service.name}
-                    className="flex items-center justify-between gap-4 border-b border-white/8 pb-3.5 text-sm"
-                  >
-                    <span className="text-white/85">{service.name}</span>
-                    <span className="tabular-nums text-white/55">
-                      {service.price}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           <div id="contact" className="mt-12 space-y-6">
