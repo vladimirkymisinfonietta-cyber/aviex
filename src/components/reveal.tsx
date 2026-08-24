@@ -4,6 +4,7 @@ import {
   useEffect,
   useRef,
   useState,
+  useSyncExternalStore,
   type ElementType,
   type ReactNode,
 } from "react";
@@ -16,6 +17,10 @@ type RevealProps = {
   as?: ElementType;
 };
 
+function subscribe() {
+  return () => {};
+}
+
 export function Reveal({
   children,
   className,
@@ -23,18 +28,16 @@ export function Reveal({
   as: Tag = "div",
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const el = ref.current;
     if (!el) {
       setVisible(true);
       return;
     }
 
-    // Fallback so content never stays invisible if observer/assets fail
     const fallback = window.setTimeout(() => setVisible(true), 1200);
 
     const observer = new IntersectionObserver(

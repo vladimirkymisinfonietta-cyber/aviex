@@ -30,5 +30,5 @@ export default async function DemoPage({ params }: PageProps) {
   const demo = getDemo(slug);
   if (!demo) notFound();
 
-  return <DemoSite demo={demo} />;
+  return <DemoSite slug={demo.slug} />;
 }

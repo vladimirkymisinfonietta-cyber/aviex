@@ -177,34 +177,13 @@ export const demos: DemoConcept[] = [
     name: "Paikallinen Pizzeria",
     category: "Ravintola",
     description:
-      "Ruoka edellä rakennettu konsepti: menu, tunnelma ja pöytävaraus heti etusivulla.",
+      "Tumma split-layout: puuliedetunnelma, suositut pizzat ja pöytävaraus heti etusivulla.",
     image: "/demos/demo-pizzeria.jpg",
     alt: "Demo-konsepti: ravintolan verkkosivun etusivu, jossa pizzakuva ja menu.",
     theme: "warm",
-    tagline: "Uunituoretta pizzaa. Auki joka päivä.",
-    highlights: ["Menu heti etusivulla", "Pöytävaraus", "Mobiiliystävällinen"],
-    menuOrServices: [
-      {
-        title: "Margherita",
-        detail: "Tomaatti, mozzarella, basilika",
-        price: "12 €",
-      },
-      {
-        title: "Diavola",
-        detail: "Tomaatti, mozzarella, salami, chili",
-        price: "14 €",
-      },
-      {
-        title: "Quattro Formaggi",
-        detail: "Neljä juustoa, hunaja",
-        price: "15 €",
-      },
-      {
-        title: "Paikallinen",
-        detail: "Talon erikoisuus, sesonkiraaka-aineet",
-        price: "16 €",
-      },
-    ],
+    tagline: "Aitoa makua puuliedeltä",
+    highlights: ["Menu heti etusivulla", "Pöytävaraus", "Puuliedetunnelma"],
+    menuOrServices: [],
     cta: "Varaa pöytä",
   },
   {
@@ -212,22 +191,13 @@ export const demos: DemoConcept[] = [
     name: "Keskus Parturi",
     category: "Parturi",
     description:
-      "Tumma ja pelkistetty konsepti, jossa palvelut ja ajanvaraus ovat keskiössä.",
+      "Luxus-tyylinen tumma konsepti: precision, hinnasto ja ajanvaraus etualalla.",
     image: "/demos/demo-barber.jpg",
     alt: "Demo-konsepti: parturin verkkosivun etusivu, jossa palveluhinnasto ja ajanvaraus.",
     theme: "dark",
-    tagline: "Siisti leikkaus. Selkeä ajanvaraus.",
-    highlights: ["Hinnasto näkyvillä", "Ajanvaraus", "Minimalistinen ilme"],
-    menuOrServices: [
-      { title: "Hiustenleikkaus", detail: "Pesu + leikkaus", price: "32 €" },
-      { title: "Parta", detail: "Muotoilu ja hoito", price: "22 €" },
-      {
-        title: "Leikkaus + parta",
-        detail: "Kokonaisuus yhdessä käynnissä",
-        price: "48 €",
-      },
-      { title: "Lasten leikkaus", detail: "Alle 12 v.", price: "24 €" },
-    ],
+    tagline: "Precision. Craft. Confidence.",
+    highlights: ["Hinnasto", "Ajanvaraus", "Minimalistinen ilme"],
+    menuOrServices: [],
     cta: "Varaa aika",
   },
   {
@@ -235,35 +205,14 @@ export const demos: DemoConcept[] = [
     name: "Paikallinen Auto",
     category: "Autohuolto",
     description:
-      "Selkeä palvelurakenne, huoltokategoriat ja matalan kynnyksen yhteydenotto.",
+      "Selkeä vaalea korjaamosivusto Luxus Car Service -hengessä: palvelut, yhteydenotto ja ajanvaraus.",
     image: "/demos/demo-auto.jpg",
     alt: "Demo-konsepti: autohuollon verkkosivun etusivu, jossa palvelukategoriat.",
     theme: "steel",
-    tagline: "Huolto, renkaat ja korjaus — ilman turhaa odottelua.",
-    highlights: ["Selkeät palvelut", "Nopea yhteydenotto", "Luottamus edellä"],
-    menuOrServices: [
-      {
-        title: "Määräaikaishuolto",
-        detail: "Öljyt, suodattimet, tarkastus",
-        price: "alk. 149 €",
-      },
-      {
-        title: "Rengasvaihto",
-        detail: "Vaihto + tasapainotus",
-        price: "alk. 49 €",
-      },
-      {
-        title: "Ilmastointihuolto",
-        detail: "Täyttö ja diagnostiikka",
-        price: "alk. 89 €",
-      },
-      {
-        title: "Jarruhuolto",
-        detail: "Tarkastus ja korjaus",
-        price: "tarjous",
-      },
-    ],
-    cta: "Pyydä huoltoaika",
+    tagline: "Autoasi parhaissa käsissä.",
+    highlights: ["Huollot", "Korjaus", "Renkaat"],
+    menuOrServices: [],
+    cta: "Ota yhteyttä",
   },
 ] as const;
 

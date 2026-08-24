@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
+import { Libre_Baskerville, Manrope, Sora } from "next/font/google";
 import { siteUrl } from "@/lib/content";
 import "./globals.css";
 
@@ -13,6 +13,12 @@ const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const baskerville = Libre_Baskerville({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -45,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fi"
-      className={`${sora.variable} ${manrope.variable} h-full antialiased`}
+      className={`${sora.variable} ${manrope.variable} ${baskerville.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans">{children}</body>
     </html>
