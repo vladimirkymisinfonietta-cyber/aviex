@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ElementType,
+  type ReactNode,
+} from "react";
 import { cn } from "@/lib/utils";
 
 type RevealProps = {
@@ -17,34 +23,46 @@ export function Reveal({
   as: Tag = "div",
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      setVisible(true);
+      return;
+    }
+
+    // Fallback so content never stays invisible if observer/assets fail
+    const fallback = window.setTimeout(() => setVisible(true), 1200);
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setVisible(true);
+            window.clearTimeout(fallback);
             observer.disconnect();
           }
         }
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(fallback);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <Tag
       ref={ref}
-      data-visible={visible}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={cn("reveal", className)}
+      data-visible={visible || !mounted}
+      style={{ transitionDelay: mounted ? `${delay}ms` : undefined }}
+      className={cn(mounted && "reveal", className)}
     >
       {children}
     </Tag>
