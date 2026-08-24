@@ -11,12 +11,20 @@ export function SiteFooter() {
           <p className="mt-5 text-sm leading-relaxed text-ink-muted">
             Modernit verkkosivut suomalaisille yrityksille.
           </p>
-          <a
-            href="mailto:info@aviex.fi"
-            className="mt-6 inline-block border-b border-ink-border pb-0.5 text-sm text-ink-foreground transition-colors duration-200 hover:border-accent-brand hover:text-accent-brand"
-          >
-            info@aviex.fi
-          </a>
+          <div className="mt-6 flex flex-col gap-3">
+            <a
+              href="https://www.aviex.fi"
+              className="text-sm text-ink-foreground transition-colors duration-200 hover:text-accent-brand"
+            >
+              www.aviex.fi
+            </a>
+            <a
+              href="mailto:info@aviex.fi"
+              className="inline-block w-fit border-b border-ink-border pb-0.5 text-sm text-ink-foreground transition-colors duration-200 hover:border-accent-brand hover:text-accent-brand"
+            >
+              info@aviex.fi
+            </a>
+          </div>
         </div>
         {footerGroups.map((group) => (
           <div key={group.title}>
@@ -39,7 +47,7 @@ export function SiteFooter() {
         ))}
       </div>
       <div className="container-page flex flex-col gap-3 border-t border-ink-border py-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 AVIEX</p>
+        <p>© 2026 AVIEX · www.aviex.fi</p>
         <div className="flex flex-wrap items-center gap-5">
           <Link
             href="/tietosuoja"

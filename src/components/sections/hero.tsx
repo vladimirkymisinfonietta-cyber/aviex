@@ -64,7 +64,7 @@ function HeroMockup() {
         <p className="text-[0.625rem] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
           Julkaistu
         </p>
-        <p className="mt-1 font-display text-sm text-foreground">aviex.fi</p>
+        <p className="mt-1 font-display text-sm text-foreground">www.aviex.fi</p>
         <div className="mt-3 h-1 w-full bg-border">
           <div className="h-1 w-full bg-accent-brand" />
         </div>

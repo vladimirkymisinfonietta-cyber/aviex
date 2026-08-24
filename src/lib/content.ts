@@ -22,6 +22,7 @@ export const footerGroups = [
     links: [
       { label: "Usein kysyttyä", href: "/usein-kysyttya" },
       { label: "Yhteystiedot", href: "/yhteystiedot" },
+      { label: "Demot", href: "/#esimerkit" },
     ],
   },
   {
@@ -151,32 +152,124 @@ export const pricingPlans = [
   },
 ] as const;
 
-export const demos = [
+export type DemoSlug =
+  | "paikallinen-pizzeria"
+  | "keskus-parturi"
+  | "paikallinen-auto";
+
+export type DemoConcept = {
+  slug: DemoSlug;
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+  alt: string;
+  theme: "warm" | "dark" | "steel";
+  tagline: string;
+  highlights: string[];
+  menuOrServices: { title: string; detail: string; price?: string }[];
+  cta: string;
+};
+
+export const demos: DemoConcept[] = [
   {
-    name: "Mussalon Pizzeria",
+    slug: "paikallinen-pizzeria",
+    name: "Paikallinen Pizzeria",
     category: "Ravintola",
     description:
       "Ruoka edellä rakennettu konsepti: menu, tunnelma ja pöytävaraus heti etusivulla.",
     image: "/demos/demo-pizzeria.jpg",
     alt: "Demo-konsepti: ravintolan verkkosivun etusivu, jossa pizzakuva ja menu.",
+    theme: "warm",
+    tagline: "Uunituoretta pizzaa. Auki joka päivä.",
+    highlights: ["Menu heti etusivulla", "Pöytävaraus", "Mobiiliystävällinen"],
+    menuOrServices: [
+      {
+        title: "Margherita",
+        detail: "Tomaatti, mozzarella, basilika",
+        price: "12 €",
+      },
+      {
+        title: "Diavola",
+        detail: "Tomaatti, mozzarella, salami, chili",
+        price: "14 €",
+      },
+      {
+        title: "Quattro Formaggi",
+        detail: "Neljä juustoa, hunaja",
+        price: "15 €",
+      },
+      {
+        title: "Paikallinen",
+        detail: "Talon erikoisuus, sesonkiraaka-aineet",
+        price: "16 €",
+      },
+    ],
+    cta: "Varaa pöytä",
   },
   {
-    name: "Nordic Barber",
+    slug: "keskus-parturi",
+    name: "Keskus Parturi",
     category: "Parturi",
     description:
       "Tumma ja pelkistetty konsepti, jossa palvelut ja ajanvaraus ovat keskiössä.",
     image: "/demos/demo-barber.jpg",
     alt: "Demo-konsepti: parturin verkkosivun etusivu, jossa palveluhinnasto ja ajanvaraus.",
+    theme: "dark",
+    tagline: "Siisti leikkaus. Selkeä ajanvaraus.",
+    highlights: ["Hinnasto näkyvillä", "Ajanvaraus", "Minimalistinen ilme"],
+    menuOrServices: [
+      { title: "Hiustenleikkaus", detail: "Pesu + leikkaus", price: "32 €" },
+      { title: "Parta", detail: "Muotoilu ja hoito", price: "22 €" },
+      {
+        title: "Leikkaus + parta",
+        detail: "Kokonaisuus yhdessä käynnissä",
+        price: "48 €",
+      },
+      { title: "Lasten leikkaus", detail: "Alle 12 v.", price: "24 €" },
+    ],
+    cta: "Varaa aika",
   },
   {
-    name: "Kotka Auto",
+    slug: "paikallinen-auto",
+    name: "Paikallinen Auto",
     category: "Autohuolto",
     description:
       "Selkeä palvelurakenne, huoltokategoriat ja matalan kynnyksen yhteydenotto.",
     image: "/demos/demo-auto.jpg",
     alt: "Demo-konsepti: autohuollon verkkosivun etusivu, jossa palvelukategoriat.",
+    theme: "steel",
+    tagline: "Huolto, renkaat ja korjaus — ilman turhaa odottelua.",
+    highlights: ["Selkeät palvelut", "Nopea yhteydenotto", "Luottamus edellä"],
+    menuOrServices: [
+      {
+        title: "Määräaikaishuolto",
+        detail: "Öljyt, suodattimet, tarkastus",
+        price: "alk. 149 €",
+      },
+      {
+        title: "Rengasvaihto",
+        detail: "Vaihto + tasapainotus",
+        price: "alk. 49 €",
+      },
+      {
+        title: "Ilmastointihuolto",
+        detail: "Täyttö ja diagnostiikka",
+        price: "alk. 89 €",
+      },
+      {
+        title: "Jarruhuolto",
+        detail: "Tarkastus ja korjaus",
+        price: "tarjous",
+      },
+    ],
+    cta: "Pyydä huoltoaika",
   },
 ] as const;
+
+export function getDemo(slug: string): DemoConcept | undefined {
+  return demos.find((demo) => demo.slug === slug);
+}
 
 export const whyItems = [
   {
@@ -250,3 +343,5 @@ export const heroHighlights = [
   "Nopea toteutus",
   "Mobiilioptimointi",
 ] as const;
+
+export const siteUrl = "https://www.aviex.fi";

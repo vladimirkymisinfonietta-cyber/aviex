@@ -110,6 +110,11 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
 
+  ::selection {
+    background: color-mix(in oklab, var(--accent-brand) 35%, transparent);
+    color: var(--foreground);
+  }
+
   h1,
   h2,
   h3,
@@ -244,5 +249,23 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-base:hover {
+    transform: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
