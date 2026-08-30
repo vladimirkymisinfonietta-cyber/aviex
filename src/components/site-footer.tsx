@@ -4,8 +4,12 @@ import { footerGroups } from "@/lib/content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-ink-border bg-ink text-ink-foreground">
-      <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)] md:py-20">
+    <footer className="relative overflow-hidden border-t border-ink-border bg-ink text-ink-foreground">
+      <div
+        className="ambient-glow left-1/4 top-0 h-64 w-96 -translate-x-1/2 bg-accent-brand/10"
+        aria-hidden
+      />
+      <div className="container-page relative grid gap-12 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)] md:py-20">
         <div className="max-w-xs">
           <Logo tone="light" />
           <p className="mt-5 text-sm leading-relaxed text-ink-muted">

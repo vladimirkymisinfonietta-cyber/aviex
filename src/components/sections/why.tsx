@@ -28,9 +28,13 @@ export function WhySection() {
             ))}
           </div>
           <Reveal delay={200}>
-            <div className="relative mt-6 overflow-hidden border border-ink bg-ink px-8 py-16 md:px-16 md:py-24">
+            <div className="relative mt-6 overflow-hidden border border-ink bg-ink px-8 py-16 shadow-luxury md:px-16 md:py-24">
               <div className="grid-lines absolute inset-0 opacity-40" aria-hidden />
-              <p className="relative font-display text-3xl leading-[1.1] tracking-[-0.03em] text-ink-foreground sm:text-4xl lg:text-5xl">
+              <div
+                className="ambient-glow right-0 top-0 h-48 w-48 bg-accent-brand/20"
+                aria-hidden
+              />
+              <p className="relative font-display text-3xl leading-[1.08] tracking-[-0.04em] text-ink-foreground sm:text-4xl lg:text-5xl">
                 AI nopeuttaa työtä.
                 <br />
                 Laatu ratkaisee.

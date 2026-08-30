@@ -21,7 +21,7 @@ export function ServicesSection({ showHeading = true }: ServicesSectionProps) {
         >
           {services.map((service, index) => (
             <Reveal key={service.number} delay={index * 80}>
-              <article className="group relative h-full bg-card p-8 transition-colors duration-300 hover:bg-secondary/60 lg:p-10">
+              <article className="group relative h-full bg-card p-8 transition-all duration-300 hover:bg-secondary/60 hover:shadow-elevated lg:p-10">
                 <p className="font-display text-xs tracking-[0.2em] text-muted-foreground transition-colors duration-300 group-hover:text-accent-brand">
                   {service.number}
                 </p>

@@ -14,8 +14,9 @@ export function TrustSection() {
         <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
           {trustItems.map((item, index) => (
             <Reveal key={item.title} delay={index * 90}>
-              <article className="border-t border-foreground/15 pt-6">
-                <h3 className="font-display text-xl text-foreground">
+              <article className="border-t border-foreground/15 pt-6 transition-colors duration-300 hover:border-accent-brand/40">
+                <span className="mb-4 block h-px w-8 bg-accent-brand/70" />
+                <h3 className="font-display text-xl tracking-[-0.02em] text-foreground">
                   {item.title}
                 </h3>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">

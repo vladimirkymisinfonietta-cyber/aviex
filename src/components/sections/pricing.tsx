@@ -15,8 +15,12 @@ export function PricingSection({
   description = "Kiinteä hinta, selkeä sisältö. Kaikki paketit sisältävät mobiiliystävällisen toteutuksen.",
 }: PricingSectionProps) {
   return (
-    <section className="section-y border-t border-border bg-secondary/40">
-      <div className="container-page">
+    <section className="section-y relative overflow-hidden border-t border-border bg-secondary/40">
+      <div
+        className="ambient-glow -right-32 top-1/4 h-96 w-96 bg-accent-brand/8"
+        aria-hidden
+      />
+      <div className="container-page relative">
         {showHeading ? (
           <SectionHeading
             eyebrow="Hinnoittelu"
@@ -33,8 +37,8 @@ export function PricingSection({
                 className={cn(
                   "flex h-full flex-col border p-8 transition-all duration-300 lg:p-10",
                   plan.featured
-                    ? "border-ink bg-ink text-ink-foreground shadow-elevated lg:-mt-6 lg:mb-6"
-                    : "border-border bg-card hover:-translate-y-1 hover:border-foreground/25",
+                    ? "border-ink bg-ink text-ink-foreground shadow-luxury lg:-mt-6 lg:mb-6"
+                    : "luxury-surface border-border hover:-translate-y-1 hover:border-foreground/25 hover:shadow-elevated",
                 )}
               >
                 <div className="flex items-start justify-between gap-3">

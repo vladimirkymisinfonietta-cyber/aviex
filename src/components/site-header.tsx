@@ -32,8 +32,8 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled || open
-          ? "border-b border-border bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75"
-          : "border-b border-transparent bg-background",
+          ? "border-b border-border/80 bg-background/90 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/80 shadow-[0_1px_0_oklch(100%_0_0_/_0.04)_inset]"
+          : "border-b border-transparent bg-background/80 backdrop-blur-sm",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between md:h-20">
